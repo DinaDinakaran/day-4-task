@@ -1,0 +1,462 @@
+ 
+1........
+let obj1 =  { name:"Person 1", age:5 };
+var obj2 = { age:5, name: "Person 1" }
+function hi(a,b){
+
+
+let value1 =JSON.stringify(obj1);
+let value2 =JSON.stringify(obj2)
+return value1.split("").sort().join("")==value2.split("").sort().join("")
+}
+let result =hi(obj1,obj2);
+console.log(result);
+
+2.display all the country flags in console..........
+let xhr= new XMLHttpRequest();
+xhr.open("GET","https://raw.githubusercontent.com/rvsp/restcountries-json-data/master/res-countries.json");
+xhr.send();
+xhr.onload = function(){
+var data =JSON.parse(xhr.response);
+if(xhr.status>=200&&xhr.status<300){
+    // console.log(data);
+    for(let d of data){
+        console.log(`
+        flage :${d.flag}
+        `)
+    }
+}else{
+    console.log("this api is error")
+}
+
+
+}
+
+3.Use the same rest countries and print all countries name, region, sub region and population..........
+
+let xhr =new  XMLHttpRequest();
+xhr.open("GET","https://raw.githubusercontent.com/rvsp/restcountries-json-data/master/res-countries.json");
+xhr.send();
+xhr.onload = function(){
+var data = JSON.parse(xhr.response);
+if(xhr.status>=200&&xhr.status<300){
+    // console.log(data);
+for(let c of data){
+    console.log(`
+    name :${c.name}
+    region :${c.region}
+    sub region :${c.subregion}
+    population :${c.population}
+    `);
+}
+
+}else{
+    console.log("data is not avalible");
+}
+}
+
+4.....
+\\1. Declare four variables without assigning values and print them in console
+var value1;
+var value2;
+var value3;
+var value4;
+console.log(value1,value2,value3,value4);
+//2.How to get value of the variable myvar as output
+var myvar= 1;
+console.log(myvar);
+//3.Declare variables to store your first name, last name, marital status, country and age in multiple lines
+let profile={
+firstname :"dinakaran",
+lastname :"vellaigounder",
+age:23
+}
+console.log(profile);
+Declare variables to store your first name, last name, marital status, country and age in a single line
+let profile =[{firstname:"dinakaram",lastname:"vellaigounder",maritalstatus:"single",country:"india",age:23}];
+for(let p of profile){
+console.log(`${p.firstname},${p.lastname},${p.maritalstatus},${p.country},${p.age}`);
+};
+//5. Declare variables and assign string, boolean, undefined and null data types
+let a=["hi",true,undefined,null];
+[b,c,d,e]=[...a]
+console.log(b);
+console.log(c);
+console.log(d);
+console.log(e);
+//6.Convert the string to integer
+A.parseInt()
+let a=10.45;
+b=parseInt(a);
+console.log(b);
+console.log(typeof(b));
+B.Number()
+let a=("10.45")
+let b=Number(a);
+console.log(b);
+console.log(typeof(b));
+C.Plus sign(+)
+let n=2;
+n++;
+console.log(n);
+//7. Write 6 statement which provide truthy & falsey values.
+statement number 1;
+let value1=1
+let value2="1"
+console.log(value1==value2);
+console.log(value1===value2);
+statement number 2;
+let object ={}
+let object1 ={}
+console.log(object==object1)
+object=object1;
+console.log(object==object1)
+statement number 3;
+let data=null
+let data1=undefined
+console.log(data==data1);
+console.log(data===data1);
+statement number 4;
+let data= 1;
+let data1 =[1];
+console.log(data==data1);
+console.log(data===data1);
+statement number 5;
+let a=0
+let b=false;
+console.log(a==b);
+console.log(a===b);
+statement number 6;
+let a=''
+let b=false;
+console.log(a==b);
+console.log(a===b);
+//Task 2: Simple Programs todo for Operators
+//1.squre the value.....................
+math.pow()method
+let square = Math.pow(5,2);
+console.log(square);
+exponentialtion method
+let a=5**2;
+console.log(a);
+//2.Swapping 2 numbers....................
+let a =[1,2,3,4,5];
+let b=[5,6,7,8,9];
+let temp;
+temp=a;
+a=b;
+b=temp;
+console.log(`
+${a}
+${b}
+`);
+//3..Addition of 3 numbers.....................
+let sum =function(...a){
+
+let total=0;
+for(let s of a){
+    total+=s;
+    
+    
+}return total;
+}
+console.log(sum(1,2,3));
+//4.Celsius to Fahrenheit conversion.......
+let Celsius = 40
+let temp;
+temp= Celsius;
+
+let fahrenheit= temp* (9/5) + 32;
+console.log(fahrenheit);
+ans: 104
+//5.meter to miles conversion...................
+let meter = 20000;
+console.log(meter);
+let temp =( (meter)*0.000621);
+console.log(temp);
+
+console.log(`miles = ${temp}`);
+//6.to covert pounds in to kg......................
+let pounds= 10000;
+let temp=pounds*0.45359237;
+console.log(`${temp} Kg`)
+//7.Calculate Batting Average..................
+let koliruns=120;
+let kolitimeout=50;
+let temp=koliruns/kolitimeout;
+console.log(`the avrg = ${temp}`);
+//8.Calculate five test scores and print their average......................
+
+function data(...a){
+let total=0;
+
+for(let t of a){
+    total+=t;
+    
+}return total;
+
+
+}let output=data(230,220,450,120,390);
+console.log(output)
+let average =(output)=>output/5;
+
+let final =average(output);
+console.log(final);
+//9.Power of any number x ^ y....................
+console.log(Math.pow(10,4))
+10. Calculate Simple Interest.................................
+let principal = 80000;
+let RateofInterest=10.0;
+let yearofdeposit =1;
+let interest =principal*RateofInterest*yearofdeposit
+console.log(`the intreast rate in year :${interest/100}`)
+/11.Calculate area of an equilateral triangle.........................
+assume ABC equilateral triangle AB is 15centimeter
+let AB = 15;
+let formula = AB**2;
+let area =0.43301 *formula;
+console.log(`area of an equilateral triangle :${area} centimeter squar`);
+//12.area of an isosceles triagle............................
+let hight = 10;
+let baselength = 8
+let area =0.5*hight*baselength;
+console.log("Area Of Isosceles Triangle :",area);
+//13. To find Volume Of Sphere........................
+//asume the sphere redious is 5 inc
+let redious = 5;
+let area = 1.3*3.14;
+let temp =(area*Math.pow(5,3).toFixed(2));
+console.log("Volume Of Sphere",temp.toFixed(3),"inc");
+//14.how to find a  Volume Of Prism................................
+assume the prism given datas
+the lenghth of prism is 5m,the widh of prism is 8m,the hight of of prism is 10m;
+let a=[5,8,10];
+[l,w,h]=[...a];
+let volume=(l*w*h);
+console.log(" Volume Of Prism",volume"inch");
+//15.To find a area of trisngle..................................
+let hight = 15;
+let baselength = 8
+let area =0.5*hight*baselength;
+console.log("Area Of Triangle :",area);
+//16.Give the Actual cost and Sold cost, Calculate Discount Of Product...........................
+assume apple sold price  mac book m1 in 150000 & discounted price 120000
+let sp = 150000;
+let dp = 120000;
+let temp = sp-dp;
+console.log("the discount percentage :",(temp/sp)*100);
+//17. find its diameter, circumference and area in circul
+assume the redious of circul is 5mm
+let redious = 5;
+let dia =2*redious
+let cir = 2*3.1415*redious;
+let area =3.1415*(redious**2);
+console.log("the diameter of circul",dia);
+console.log("circumfarance of circul",cir)
+console.log("the area of circul",area)
+//18.Given two numbers and perform all arithmetic operations....
+let a=10;
+let b=7;
+console.log(a+b);
+console.log(a-b);
+console.log(a*b);
+console.log(a/b);
+console.log(a%b);
+//19.Display the asterisk pattern as shown below(No loop needed):
+let a="*****";
+
+
+console.log(`
+
+${a}
+
+${a}
+
+${a}
+
+${a}
+
+${a}
+
+`);
+//20.Calculate electricity bill?...................................................
+assume tamilnadu EB tariff calculation;
+to assume a consumer consumes 100 watts per hour daily for one month.
+per unit perice is RS 10;
+let day1 =2400;
+let perunit=10;
+let month=day1*31;//watts
+
+let monthlyunit =(month/1000)-100;
+console.log("monthly elecrtical energy consubtion is",monthlyunit,"KWH")
+console.log("the electric bill on per month is ;",(monthlyunit*10))
+//21.Program To Calculate CGPA.............
+
+let Greadpoint=[8,9,6,8,9];
+let total=0;
+for(let t of Greadpoint){
+total+=t;
+}
+console.log("the student CGPA is :",total/5);
+///Task 3: Simple Programs todo for Condition , Looping and Arrays..............
+1.
+let a=["#","#","#","#","#","#","#"];
+let total="";
+for(let i=0;i<a.length;i++){
+    total+=a[i]
+    console.log(total);
+}
+2.
+var strArray= ["<option>Jazz</option>",
+"<option>Blues</option>",
+"<option>New Age</option>",
+"<option>Classical</option>",
+"<option>Opera</option>"]
+for(let i=0;i<strArray.length;i++){
+    
+    console.log(strArray[i])
+}
+3.Arrays:
+var myarray=[11,22,33,44,55]
+write a code to count the elements in the array . Don’t use length property
+Declare an empty array;
+function addValue(arr, value){
+
+    return arr.push(value)
+    
+    
+    
+    }
+    
+    let v=addValue([11,22,33,44],55);
+    console.log(v);
+////Create an array called foods holds the names of your top 20 favorite foods, starting with the best food.
+//1.let MyFavFoods=["dhosa","beriyani","kalan munjuri","chicken rise","ulutha vadai","sasagula","pelpurii","parota","piza","molinga","muttan beriyani",
+"palgova","therunalveli alva","therupathi laddus","popcone","ege rise","kothu parota"]
+Foods variable holds the names of your top 20 favorite foods, starting with the best food. How can you find your fifth favorite food?
+
+//2.let MyFavFoods=["dhosa","beriyani","kalan munjuri","chicken rise","ulutha vadai","sasagula","pelpurii","parota","piza","molinga","muttan beriyani",
+ "palgova","therunalveli alva","therupathi laddus","popcone","ege rise","kothu parota"]
+console.log(MyFavFoods[4])
+Starting from the existing friends variable below, change the element that is currently “Mari” to “Munnabai”.
+let friends = [
+    " Mari",
+    " MaryJane",
+     "CaptianAmerica",
+     "Munnabai",
+     "Jeff",
+     "AAK chandran"
+     ];
+     friends.splice(0,1 ,"Munnabai")
+     function dataHandling(input){
+     for (var i = 0; i < input.length; i++) {
+     console.log(input[i])
+     }
+     }
+     dataHandling(friends);
+//3.Starting from the friends variable below, Loop and Print the names till you meet CaptianAmerica.
+let friends = [
+    " Mari",
+    " MaryJane",
+     "CaptianAmerica",
+     "Munnabai",
+     "Jeff",
+     "AAK chandran"
+     ];
+     
+     function dataHandling(input){
+     for (var i = 0; i < input.length; i++) {
+     if (input[i] === "CaptianAmerica"){
+         break;
+     }else{
+         console.log(input[i]);
+     }
+     }
+     }
+     dataHandling(friends);
+
+
+4.Find the person is ur friend or not.
+
+let friends = [
+    " Mari",
+    " MaryJane",
+     "CaptianAmerica",
+     "Munnabai",
+     "Jeff",
+     "AAK chandran"
+     ];
+     
+     function dataHandling(input,name){
+     for (var i = 0; i < input.length; i++) {
+         
+     if (input[i] === name){
+         return input[i];
+     }
+     }
+     }
+     let found= dataHandling(friends,"Jeff");
+console.log(found)
+5.We have two lists of friends below. Use array methods to combine them into one alphabetically-sorted list.
+
+var friends1 = [
+    "Mari",
+    "MaryJane",
+    "CaptianAmerica",
+    "Munnabai",
+    "Jeff",
+    "AAK chandran"
+    ];
+    var friends2 = [
+   " Gabbar",
+   " Rajinikanth",
+    "Mass",
+    "Spiderman",
+    "Jeff",
+   " ET"
+    ];
+
+    function dataHandling(input1,input2){
+let totalfrnds=[...input1,...input2]
+console.log(totalfrnds.sort())
+
+
+
+
+
+    }
+    dataHandling(friends1,friends2);
+---------------------------------------------------------------------
+1.Get the first item, the middle item and the last item of the array
+let array=[2,3,4,56,7,89]
+console.log(array[0])
+console.log(array[2])
+console.log(array[5])
+2.Add your name to the end of the friends array, and add another name to beginning.
+let friends = [
+    " Mari",
+    " MaryJane",
+     "CaptianAmerica",
+     "Munnabai",
+     "Jeff",
+     "AAK chandran"
+     ]
+friends.push("dinakaran");
+friends.unshift("kamalesh");
+console.log(friends);
+3.Add Mr or Ms to the names in the friends array
+let friends = [
+    " Mari",
+    " MaryJane",
+     "CaptianAmerica",
+     "Munnabai",
+     "Jeff",
+     "AAK chandran"
+     ];
+     let temp ="";
+for(let n of friends){
+temp= temp+ "Mr."+n+","
+
+
+}console.log(temp)
+
